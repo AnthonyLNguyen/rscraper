@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  root 'application#hello'
+  get 'welcome/index'
+ 
+  root 'welcome#index'
+  
+  post '/scrape', to: 'welcome#scrape', as: 'scrape'
+  
 end

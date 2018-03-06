@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scraper</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+    <h1>Ruby Scraper</h1>
+
+    <%= form_tag scrape_path, method: :post do %>
+        <div class="input">
+        <%= label_tag("Link:") %>
+        <br>
+        <%= text_field_tag 'my_url' %>
+        <br>
+        <%= label_tag("Tags:") %>
+        <br>
+        <%= text_field_tag 'my_tag' %>
+        </div>
+        <br>
+        <div class="button">
+        <%= submit_tag 'Scrape' %>
+        </div>
+    <% end %>
+    
+  </body>
+</html>
+
